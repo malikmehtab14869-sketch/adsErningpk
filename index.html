@@ -3,134 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mehtab's Website</title>
+  <title>PUBG Style Website</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * {margin:0; padding:0; box-sizing:border-box;}
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #111);
+      background: url('https://wallpapercave.com/wp/wp6533917.jpg') no-repeat center center/cover;
       color: white;
-      line-height: 1.6;
-    }
-    header {
-      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       text-align: center;
-      color: #fff;
-      position: relative;
+      height: 100vh;
+      overflow: hidden;
     }
-    header::after {
+
+    /* Overlay for dark look */
+    body::after {
       content: '';
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top:0; left:0;
+      width:100%; height:100%;
       background: rgba(0,0,0,0.6);
+      z-index:-1;
     }
-    header h1, header p {
-      position: relative;
-      z-index: 1;
+
+    header {
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
     }
-    header h1 {
-      font-size: 3.5rem;
-      color: #00ff99;
+
+    h1 {
+      font-size:3rem;
+      color:#ffcc00;
+      text-shadow:0 0 20px #ffcc00, 0 0 40px #ff6600;
       animation: glow 2s infinite alternate;
     }
     @keyframes glow {
-      from { text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99; }
-      to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; }
+      from { text-shadow:0 0 10px #ffcc00, 0 0 20px #ff6600; }
+      to { text-shadow:0 0 30px #ff9900, 0 0 60px #ff3300; }
     }
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.8);
-      display: flex;
-      justify-content: center;
-      padding: 15px;
-      z-index: 1000;
+
+    /* Typewriter effect */
+    .typing {
+      font-size:1.5rem;
+      color:#fff;
+      border-right:2px solid #fff;
+      white-space:nowrap;
+      overflow:hidden;
+      width:22ch;
+      animation: typing 4s steps(22) infinite alternate, blink .75s step-end infinite;
     }
-    nav a {
-      color: #00ffcc;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: lime;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #00ff99;
-    }
+    @keyframes typing { from{width:0} to{width:22ch} }
+    @keyframes blink { 50%{border-color:transparent} }
+
+    /* Button */
     .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 15px;
-      background: #00ff99;
-      color: #000;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+      display:inline-block;
+      margin-top:30px;
+      padding:12px 25px;
+      background:#ffcc00;
+      color:black;
+      font-size:18px;
+      border-radius:8px;
+      text-decoration:none;
+      transition:0.3s;
     }
     .btn:hover {
-      background: lime;
-      color: black;
+      animation: shake 0.5s;
+      background:#ff6600;
+      color:#fff;
     }
-    footer {
-      background: #000;
-      padding: 20px;
-      text-align: center;
-      color: #aaa;
+    @keyframes shake {
+      0% { transform: translate(1px, 1px) rotate(0deg); }
+      20% { transform: translate(-1px, -2px) rotate(-1deg); }
+      40% { transform: translate(-3px, 0px) rotate(1deg); }
+      60% { transform: translate(3px, 2px) rotate(0deg); }
+      80% { transform: translate(1px, -1px) rotate(1deg); }
+      100% { transform: translate(-1px, 2px) rotate(-1deg); }
     }
   </style>
 </head>
 <body>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <header id="home">
-    <h1>Welcome to Mehtab's Website</h1>
-    <p>Your own free stylish website 🚀</p>
-    <a href="#about" class="btn">Explore</a>
+  <header>
+    <h1>PUBG Official Zone</h1>
+    <p class="typing">Winner Winner Chicken Dinner 🍗🔥</p>
+    <a href="#" class="btn">Join Squad</a>
   </header>
+</body>
+</html>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hi, I am Mehtab 👋. This is my personal website created for free. I love gaming 🎮 (PUBG & Free Fire) and enjoy learning new things online.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>You can connect with me on my social media:</p>
-    <a href="#" class="btn">Facebook</a>
-    <a href="#" class="btn">Instagram</a>
-    <a href="#" class="btn">YouTube</a>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Mehtab | Made with ❤️</p>
-  </footer>
 
 </body>
 </html>
+
